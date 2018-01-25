@@ -40,20 +40,17 @@ class Form1SettingComponent extends Component {
         })
         .catch(err=>console.error(err));
     }
-    componentWillMount() {
+   async componentWillMount() {
         console.warn('componentWillMount');
         /** query count  table  hists*/
-        KnexSqlites.getCount(TableNames.hists(), { token: Token.get_access_token("") })
-        .then(res=>console.warn(res)).catch(err=>console.error(err))
+       let result = await KnexSqlites.getCount(TableNames.hists(), { token: Token.get_access_token("") });
         /** query config_sql */
-        KnexSqlites.findOne("", TableNames.config_sql(), {access_token:Token.get_access_token("")})
-        .then(res=>console.warn(res)).catch(err=>console.error(err));
-        this.setState({histypes:get_value_his.histypes});
+       let get_value_his= await KnexSqlites.findOne("", TableNames.config_sql(), {access_token:Token.get_access_token("")});
+       this.setState({histypes:get_value_his.histypes});
 
         if(result.count > 0){
             /** check hists > 0 load hists  send to function resultHis*/
-            KnexSqlites.Connect().select("*").from(TableNames.hists()).where({ token: Token.get_access_token("") })
-            .then(res=>console.warn(res)).catch(err=>console.error(err));
+            let resultHis  = await KnexSqlites.Connect().select("*").from(TableNames.hists()).where({ token: Token.get_access_token("") });
             this.handleSetState(resultHis);
         }else{
             this.handleFetchHis();
