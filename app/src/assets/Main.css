@@ -1,3 +1,40 @@
 .app{
     background:#fff;
 }
+.p{
+    margin-left: 10px;
+    color: white;
+    border-bottom: 1px solid #fff;
+    width: 40%;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+.columns-head{
+    text-align: left;
+    width: 65%;
+    font-size: 30pt;
+    color: rgb(255, 255, 255);
+}
+.columns{
+    background-color: rgb(33, 133, 208);
+    width: 20%;
+    margin-right: 5%;
+    border-radius: 10px;
+    padding: 20px;
+}
+.columns i {
+    font-size: 3em;
+    float: right;
+    margin-top: -40px;
+    margin-right: 9px;
+    color: #fff;
+}
+.ui.tablet.reversed.equal.width.grid .column .h2 {
+    color: #fff;
+    font-weight: bold;
+}
+hr{
+    background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}

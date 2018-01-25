@@ -5,7 +5,6 @@ import KnexSqlites from "../../providers/KnexSqlites";
 import TableNames from "../../providers/TableNames";
 import Token from "../../providers/Token";
 
-import MaskedInput from 'react-maskedinput';
 class Form3SettingComponent extends Component {
     constructor(props) {
         super();
@@ -50,7 +49,8 @@ class Form3SettingComponent extends Component {
                         <Select value={this.state.dbnames} optionValue={dbNameOptions} label="Schema" name="dbnames" onChange={this.handleChange} />
                         <div className="form-group">
                             <label>Charecter</label>
-                            <MaskedInput mask="111111" name="chars" size="20" value={this.state.chars} onChange={this.handleChange} className="form-control" />
+                            <input type="text" name="chars"  value={this.state.chars} onChange={this.handleChange} className="form-control"  />
+ 
                         </div>
                     </div>
                     <div className="card-footer text-right">

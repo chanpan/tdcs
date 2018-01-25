@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Tab } from 'semantic-ui-react'
-import DashboardComponent from './dashboard.component';
-import DelayConfigComponent from './delay.config.component';
-import DataTransferComponent from './data.transfer.component';
-import EventScheduleComponent from './event.schedule.component';
-import CheckCommandComponent from './check.command.component';
+import DashboardComponent from './dashboard/dashboard.component';
+import DelayConfigComponent from './delay_config/delay.config.component';
+import DataTransferComponent from './data_transfer/data.transfer.component';
+import EventScheduleComponent from './event_schedule/event.schedule.component';
+import CheckCommandComponent from './check_command/check.command.component';
  
 
 
