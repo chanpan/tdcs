@@ -9,7 +9,7 @@ class TestOracle {
             sid:"xe",
             externalAuth: false
         };
-        Oracles.Connect(config).then(res=>console.warn({status:"success", data:res})).catch(err=>console.error(err));
+        Oracles.Connect(config).then(res=>console.warn({status:"connection oracle success", data:res})).catch(err=>console.error(err));
     }
 }
 

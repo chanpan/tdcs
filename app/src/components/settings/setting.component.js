@@ -5,7 +5,7 @@ import Form3SettingComponent from './form3.setting.component';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Modals from "../../providers/html/Modals";
  
-
+/** Component */
  
 class SettingComponent extends Component{
     constructor(){
@@ -42,6 +42,7 @@ class SettingComponent extends Component{
     render(){
         return(
             <div>
+                 
                 <div className="row mt-2">
                     <Form1SettingComponent />   
                     <Form2SettingComponent Connect={this.handleConnect.bind(this)} />

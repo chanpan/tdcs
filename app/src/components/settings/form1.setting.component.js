@@ -31,10 +31,9 @@ class Form1SettingComponent extends Component {
             console.warn(res);
             /** get buffe_config webservice save to sqlite on table buffe_config */
             Api.tdc_get_buffe_config().then(res=>{
-                console.info(res.his_type);
                 /** update sqlite buffe_config */
                 KnexSqlites.Update(TableNames.buffe_config(), res, {token:Token.get_access_token('')})
-                .then(res2=>console.warn(res2))
+                .then(res2=>console.warn(res2.status))
                 .catch(err=>console.error(err));
             });
         })

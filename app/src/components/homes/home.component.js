@@ -6,7 +6,7 @@ import DataTransferComponent from './data_transfer/data.transfer.component';
 import EventScheduleComponent from './event_schedule/event.schedule.component';
 import CheckCommandComponent from './check_command/check.command.component';
  
-
+import Welcome from '../top_head/Welcome';
 
 class HomesComponent extends Component {
     constructor(props) {
@@ -22,6 +22,7 @@ class HomesComponent extends Component {
           ]
         return (
             <div className="home">
+                <Welcome />
                 <Tab panes={panes} />
             </div>
         );

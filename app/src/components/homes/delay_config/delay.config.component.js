@@ -10,7 +10,7 @@ class DelayConfigComponent extends Component {
             input4:0,input5:0,input6:0,
             input7:0,
         }
-        this.onChangeInput1 = this.onChangeInput1.bind(this);
+         
     }
     onChangeInput1(data){
         this.setState({input1:data});
@@ -39,13 +39,13 @@ class DelayConfigComponent extends Component {
             <div>
                 <Card title="Config time delay : Min:1 Max:120">
                     <h2></h2>
-                    <Slide unit="Second" name="Config Delay :"  onChange={this.onChangeInput1}/>
-                    <Slide unit="Second" name="Command Delay :"  onChange={this.onChangeInput2}/>
-                    <Slide unit="Second" name="Constants Delay :"  onChange={this.onChangeInput3}/>
-                    <Slide unit="Second" name="Template Delay :"  onChange={this.onChangeInput4}/>
-                    <Slide unit="Second" name="Sync Delay :"  onChange={this.onChangeInput5}/>
-                    <Slide unit="Second" name="Event Delay :"  onChange={this.onChangeInput6}/>
-                    <Slide unit="Record" name="Sync Nrec :"  onChange={this.onChangeInput7}/>
+                    <Slide unit="Second" name="Config Delay :"  onChange={this.onChangeInput1.bind(this)}/>
+                    <Slide unit="Second" name="Command Delay :"  onChange={this.onChangeInput2.bind(this)}/>
+                    <Slide unit="Second" name="Constants Delay :"  onChange={this.onChangeInput3.bind(this)}/>
+                    <Slide unit="Second" name="Template Delay :"  onChange={this.onChangeInput4.bind(this)}/>
+                    <Slide unit="Second" name="Sync Delay :"  onChange={this.onChangeInput5.bind(this)}/>
+                    <Slide unit="Second" name="Event Delay :"  onChange={this.onChangeInput6.bind(this)}/>
+                    <Slide unit="Record" name="Sync Nrec :"  onChange={this.onChangeInput7.bind(this)}/>
                     <div style={{textAlign:"center",marginTop:"10px"}}>
                         <Button size='large' type="primary"><Icon name='save'/>Save</Button> {' '}
                         <Button size='large'>Reset</Button>
