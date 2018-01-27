@@ -28,7 +28,12 @@ const electron = require("electron");
         $('#username').val("chanpan.nuttaphon1993@gmail.com");
         $('#password').val("Chanpan!((#");
         goHome = () => {
-            let mainWindow = new BrowserWindow({ width: 1000, height: 800 ,maxWidth:1000, maxHeight:800,minWidth:1000, minHeight:800})
+            let mainWindow = new BrowserWindow({ 
+                width: 1000, 
+                height: 800 ,
+                minWidth:1000, 
+                minHeight:600});
+
             mainWindow.loadURL(`file://${__dirname}/../index.html`)
             mainWindow.webContents.openDevTools();
 

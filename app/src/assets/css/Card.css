@@ -1,0 +1,17 @@
+.welcome .ant-card-head{
+    background:#2185d0;
+}
+.welcome .ant-card-head .ant-card-head-title{
+    color:#fff
+}
+.welcome .ant-card-body{
+    color:#fff;
+    background:#2185d0;
+}
+
+.welcome .ui.list .list>.item a.header, .ui.list>.item a.header{
+    color:#ffffff!important;
+}
+.welcome .ui.list .list>.item a.header, .ui.list>.item a.header:hover{
+    color:#ffffff!important;
+}
