@@ -45,7 +45,7 @@ class App extends Component {
 
         return (
             <div style={{ margin: '10px' }}>
-            <button name="2" onClick={this.handleClick.bind(this)}>Setting</button>
+            {/* <button name="2" onClick={this.handleClick.bind(this)}>Setting</button> */}
                    <Tabs
                     onChange={this.onChange.bind(this)}
                     activeKey={this.state.activeKey}
