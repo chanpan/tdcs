@@ -9,6 +9,7 @@ import Urls from "../../providers/Urls";
 import TableNames from "../../providers/TableNames";
 import Token from "../../providers/Token";
 
+import { Button, Card, Slider, InputNumber, Row, Col,notification,message  } from 'antd';
  
 class Form2SettingComponent extends Component {
     
@@ -50,22 +51,34 @@ class Form2SettingComponent extends Component {
         this.setState({[event.target.name]:event.target.value});        
     }
     handleConnect(){
+        
         this.setState({fonts:"fa fa-spinner fa-spin fa-3x fa-fw",disabled:''});
         Oracles.Connect(this.state)
         .then(res=>{
             console.warn("handleConnect || Connect database success.");
+            
             this.props.Connect({status:1,value:res, configs:this.state}); 
             let date = new Date();
             this.setState({id:date.getTime(), access_token:Token.get_access_token('access_token')});
             this.handleCheckCount();
             setTimeout(()=>{
                 this.setState({fonts:"",disabled:'true'});
+                notification.success({
+                    message: 'Success',
+                    description: 'Connect database success.',
+                    placement: 'bottomRight',
+                });
             },1000);
         })
         .catch(err=>{
-            this.props.Connect({status:2,value:err});
+            //this.props.Connect({status:2,value:err});
             this.setState({fonts:"",disabled:'true'});
             console.error("handleConnect || Connect database error.");
+            notification.error({
+                message: 'Error',
+                description: err.message,
+                placement: 'bottomRight',
+            });
         });
     }
     handleCheckCount(){

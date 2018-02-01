@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Icon, mage, List } from 'semantic-ui-react';
 import { Button,Card } from 'antd';
 
+
 class DashboardComponent extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +18,7 @@ class DashboardComponent extends Component {
             pcs: { cpu_app: "100", cpu_total: "45", ram_app: "50", ram_total: "20" }
         };
     }
-
+ 
     render() {
         let { colors, pcs } = this.state;
         return (

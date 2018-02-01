@@ -1,5 +1,5 @@
 .welcome .ant-card-head{
-    background:#2185d0;
+    background:rgb(64, 183, 255);
 }
 .welcome .ant-card-head .ant-card-head-title{
     color:#fff;
@@ -7,13 +7,13 @@
 }
 .welcome .ant-card-body{
     color:#fff;
-    background:#2185d0;
+    background:rgb(64, 183, 255);
     margin-top: -33px;
     font-size: 12pt;
 }
 .welcome .ant-alert-with-description .ant-alert-message {
     font-size: 23px;
-    color: rgba(0, 0, 0, 0.85);
+    color: rgb(255, 255, 255);
     display: block;
     margin-bottom: 4px;
 }
@@ -25,6 +25,10 @@
     color:#ffffff!important;
 }
 .welcome .ant-alert-success {
-    border: 1px solid #93ef4c;
-    background-color: #b7eb8f;
+    border: 1px solid #f5aa00;
+    background-color: rgb(245, 150, 0);
+}
+
+.ant-notification-notice{
+    background-color: #f7f7f7;
 }

@@ -5,6 +5,9 @@ class TableNames{
     static buffe_config(){
         return 'buffe_config';
     }
+    static buffe_command(){
+        return 'buffe_command';
+    }
     static buffe_constant(){
         return 'buffe_constants';
     }

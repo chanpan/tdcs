@@ -39,5 +39,14 @@ class Api{
             .catch(err=>reject(err));
        });  
     }
+    static tdc_get_buffe_constants(){ 
+        return new Promise((resolve,reject)=>{
+            fetch(url.tdc_get_buffe_constants(),{
+                method:"GET"
+            })
+            .then(res=>resolve(res.json()))
+            .catch(err=>reject(err));
+       });  
+    }
 }
 export default Api;

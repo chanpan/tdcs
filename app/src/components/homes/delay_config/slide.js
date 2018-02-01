@@ -5,9 +5,10 @@ class Slide extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputValue: 1,
+            inputValue: this.props.value,
         }
         this.onChange = this.onChange.bind(this);
+        console.warn(this.props.value);
     }
     onChange(value) {
         this.setState({

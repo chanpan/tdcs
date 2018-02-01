@@ -23,6 +23,7 @@ class HomesComponent extends Component {
         return (
             <div className="home">
                 <Welcome />
+                
                 <Tab panes={panes} />
             </div>
         );

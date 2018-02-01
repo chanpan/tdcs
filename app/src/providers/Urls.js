@@ -20,6 +20,9 @@ class Urls{
     static tdc_get_buffe_config(){
         return Urls.tdc_service()+"buffe-config/?token="+Token.get_access_token('access_token');
     }
+    static tdc_get_buffe_constants(){
+        return Urls.tdc_service()+"buffe-constants/?token="+Token.get_access_token('access_token');
+    }
 
     static db_home_dir(){
         return DEFAULT_FOLDER;

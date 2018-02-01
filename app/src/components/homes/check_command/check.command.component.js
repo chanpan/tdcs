@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import { Table,Card } from 'antd';
+import electron from 'electron';
+const ipc = electron.ipcRenderer;
 const columns = [
     { 
         title: 'ID', dataIndex: 'id', key: 'id',
@@ -23,6 +25,9 @@ const columns = [
   ];
  
 class CheckCommandComponent extends Component{
+    componentWillMount(){
+        
+    }
     render(){
         return(
             <div>

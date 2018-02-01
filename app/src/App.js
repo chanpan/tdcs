@@ -18,6 +18,13 @@ import HomesComponent from './components/homes/home.component';
 /** semantic ui*/
 import { Tabs,Badge , Button } from 'antd';
 import { Icon } from 'semantic-ui-react';
+import Api from './providers/Api';
+import KnexSqlites from './providers/KnexSqlites';
+import Token from './providers/Token';
+import TableNames from './providers/TableNames';
+import Config from './providers/Config';
+import ElectronIpc from './components/homes/electron_ipc/ElectronIpc';
+
 
 const TabPane = Tabs.TabPane;
 const panes = [
@@ -32,10 +39,25 @@ class App extends Component {
         this.state = {
             activeKey: panes[0].key,
             panes,
-        };
+        }; 
     }
+   async componentWillMount(){
+    ElectronIpc.Start();
+        // let count_his = await KnexSqlites.getCount(TableNames.hists(), {token:Token.get_access_token('')});
+        // Config.save_his_type(count_his);
+        // Config.save_config_sql();
+        // // let count_command = await KnexSqlites.getCount(TableNames.buffe_command(), {token:Token.get_access_token('')});
+        // // Config.save_buffe_command(count_command);
+
+        // let count_config = await KnexSqlites.getCount(TableNames.buffe_config(), {token:Token.get_access_token('')});
+        // Config.save_buffe_config(count_config);
+
+        // let count_constant = await KnexSqlites.getCount(TableNames.buffe_constant(), {token:Token.get_access_token('')});
+        // Config.save_constant(count_constant);
+        
+    }
+
     onChange(activeKey) {
-        console.log(activeKey);
         this.setState({ activeKey });
     }
     handleClick(e){
@@ -45,7 +67,7 @@ class App extends Component {
 
         return (
             <div style={{ margin: '10px' }}>
-            {/* <button name="2" onClick={this.handleClick.bind(this)}>Setting</button> */}
+            
                    <Tabs
                     onChange={this.onChange.bind(this)}
                     activeKey={this.state.activeKey}
@@ -53,10 +75,7 @@ class App extends Component {
                 >
                     {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
                 </Tabs>
-                {/* <Tabs ActiveKey="2" onChange={this.callback}>
-                    <TabPane tab={<Icon name='home' size='big'></Icon>} key="1"><HomesComponent /></TabPane>
-                    <TabPane tab="Setting" key="2"><SettingComponent /></TabPane>
-                </Tabs> */}
+                 
             </div>
         );
     }

@@ -11,7 +11,7 @@ class Processqueue extends Component {
             <div className="processqueue">
                 <Alert
                     message="Process Queue"
-                    description="ใส่ข้อมูลที่นี่"
+                    description="  "
                     type="success"
                     
                 /><br />
