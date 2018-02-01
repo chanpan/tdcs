@@ -15,7 +15,8 @@ class DashboardComponent extends Component {
                 white: "#ffffff",
                 blue: "#2185d0"
             },
-            pcs: { cpu_app: "100", cpu_total: "45", ram_app: "50", ram_total: "20" }
+            pcs: { cpu_app: "100", cpu_total: "45", ram_app: "50", ram_total: "20" },
+            pcs_color:{}
         };
     }
  
