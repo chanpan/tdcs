@@ -118,3 +118,9 @@ async function onLoad(){
 //   
   // event.sender.send("test-func",machine.get_ram_total());
 // });
+
+ipcMain.on("dashboard", async function(event) {
+   
+  event.sender.send("dashboard-func", await machine.get_ram_total());
+
+});

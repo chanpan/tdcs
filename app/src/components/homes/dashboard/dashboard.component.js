@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Grid, Icon, mage, List } from 'semantic-ui-react';
 import { Button,Card } from 'antd';
 
+import electron from "electron";
+const ipcMain = electron.ipcMain;
+const ipcRenderer = electron.ipcRenderer;
 
 class DashboardComponent extends Component {
     constructor(props) {
@@ -19,7 +22,27 @@ class DashboardComponent extends Component {
             pcs_color:{}
         };
     }
- 
+ componentWillMount(){
+   
+     setInterval(()=>{
+        process.setMaxListeners(Infinity);
+        ipcRenderer.send("dashboard");
+        ipcRenderer.on("dashboard-func",async (event, data)=>{
+            let cpuApp  = data['cpuApp']['percentCPUUsage'];
+            let ramApp = data['ramApp'];
+            let cpuTotal = data['cpuTotal'];
+            let ramTotal = data['ramTotal'];
+            
+            this.setState({
+                pcs: { cpu_app: cpuApp.toFixed(1), cpu_total:cpuTotal.toFixed(1), ram_app:ramApp.toFixed(1), ram_total:ramTotal.toFixed(1) },
+            });
+        });
+     },1000);
+    
+ }
+ componentDidMount(){
+    console.log('will_did_mount');
+ }
     render() {
         let { colors, pcs } = this.state;
         return (
